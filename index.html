@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Timetable Generator</title>
+  <!-- STYLE -->
+  <link rel="stylesheet" href="./style.css">
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+  <div class="container">
+    <div id="notification"></div>
+
+    <div class="inputs-container">
+      <h2>School Timetable Generator</h2>
+      <label for="schoolStartTime">School Start Time:</label>
+      <input type="time" id="schoolStartTime" value="08:00">
+      <label for="schoolEndTime">School End Time:</label>
+      <input type="time" id="schoolEndTime" value="14:30">
+      <br><br>
+      <label for="classDuration">Class Duration (minutes):</label>
+      <input type="number" id="classDuration" value="40">
+      <label for="recessDuration">Recess Duration (minutes):</label>
+      <input type="number" id="recessDuration" value="45">
+      <label for="periodsPerDay">Number of Periods per Day:</label>
+      <input type="number" id="periodsPerDay" value="7" min="1" max="10">
+      <label for="numRoutines">Number of Routines to Generate:</label>
+      <select id="numRoutines">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </select>
+      <br><br>
+      <div id="subjects">
+        <h3>Add Subject:</h3>
+        <label for="subjectSelect">Subject:</label>
+        <select id="subjectSelect">
+          <option value="Maths">Maths</option>
+          <option value="English">English</option>
+          <option value="Social Science">Social Science</option>
+          <option value="Science">Science</option>
+          <option value="Hindi">Hindi</option>
+          <option value="AI">AI</option>
+          <option value="GK">GK</option>
+          <option value="Bengla">Bengla</option>
+          <option value="Computer">Computer</option>
+          <option value="Work Education">Work Education</option>
+          <option value="Drawing">Drawing</option>
+          <option value="Singing / Dance">Singing / Dance</option>
+          <option value="Physical Education">Physical Education</option>
+          <option value="H/H/W">H/H/W</option>
+          <option value="E/H/W">E/H/W</option>
+        </select>
+        <label for="teacher">Teacher:</label>
+        <input type="text" id="teacher">
+        <button onclick="addSubject()">Add Subject</button>
+        <ul class="subject-list" id="subjectList"></ul>
+      </div>
+      <br>
+      <!-- Add the Generate Timetable button here -->
+      <button onclick="generateTimetables()">Generate Timetables</button>
+    </div>
+    <div class="timetable-container" id="timetables">
+      <!-- Timetables will be appended here -->
+    </div>
+  </div>
+  <!-- SCRIPT -->
+  <script src="./script.js"></script>
+</body>
+
+</html>
